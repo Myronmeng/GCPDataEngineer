@@ -11,3 +11,9 @@ gcloud dataproc clusters create my-second-cluster --zone us-central1-a \
 https://codelabs.developers.google.com/codelabs/cpb102-running-pig-spark/#0
 ## Run a DataProc project, with pyspark but submit job through dataproc
 https://codelabs.developers.google.com/codelabs/cpb102-running-dataproc-jobs/#0
+
+## Customize dataproc nodes
+refer:
+```
+gsutil ls gs://dataproc-initialization-actions
+```
