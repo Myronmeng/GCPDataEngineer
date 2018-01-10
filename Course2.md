@@ -17,5 +17,7 @@ refer:
 ```
 gsutil ls gs://dataproc-initialization-actions
 ```
+## Use big query in python
+https://codelabs.developers.google.com/codelabs/cpb102-dataproc-with-gcp/#0
 ## How to use Google API
 https://codelabs.developers.google.com/codelabs/cpb102-machine-learning-to-big-data-processing/#0
