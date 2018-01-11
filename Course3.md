@@ -6,7 +6,7 @@ SELECT
   total_flights,
   num_delayed / total_flights AS frac_delayed
 # FROM 
-[//]: <> (This is also a comment.)
+###### sdfwe
 (
 SELECT
   f.airline AS airline,
