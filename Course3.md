@@ -5,8 +5,8 @@ SELECT
   num_delayed,
   total_flights,
   num_delayed / total_flights AS frac_delayed
-FROM 
-<> subquery
+# FROM 
+-- subquery
 (
 SELECT
   f.airline AS airline,
