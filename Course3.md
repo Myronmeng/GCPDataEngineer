@@ -42,12 +42,17 @@ WITH TitlesAndScores AS (
 )
 ```
 ### array, and select as struct
+struct is a structure that has multiple fields, and can be understand as an 'object'.
+
 ```sql
 SELECT ..., 
   ARRAY(SELECT AS STRUCT ..., ...
         FROM UNNEST(...) ORDER BY ... DESC
 ```
-
+### extract
+```sql
+EXTRACT(DATA FROM times_ts) AS date
+```
 
 ## use bq command to create big query table
 ```
