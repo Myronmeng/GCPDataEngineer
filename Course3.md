@@ -45,14 +45,16 @@ WITH TitlesAndScores AS (
 struct is a structure that has multiple fields, and can be understand as an 'object'.
 
 ```sql
-WITH TitlesAndScores AS (--fefe
+WITH TitlesAndScores AS (
   SELECT
+    -- create a struct
     ARRAY_AGG(STRUCT(title,score)) AS titles,
     EXTRACT(DATE FROM time_ts) AS date
   FROM `xxx.yyy.zzz`
   WHERE score IS NOT NULL AND title IS NOT NULL
   GROUP BY date)
 SELECT date,
+  -- extract data from an struct using SELECT AS STRUCT
   ARRAY(SELECT AS STRUCT title, score
         FROM UNNEST(titles) ORDER BY score DESC
 LIMIT 2)
