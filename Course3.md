@@ -45,7 +45,7 @@ WITH TitlesAndScores AS (
 struct is a structure that has multiple fields, and can be understand as an 'object'.
 
 ```sql
-WITH TitlesAndScores AS (
+WITH TitlesAndScores AS (--fefe
   SELECT
     ARRAY_AGG(STRUCT(title,score)) AS titles,
     EXTRACT(DATE FROM time_ts) AS date
