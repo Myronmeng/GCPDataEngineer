@@ -1,4 +1,6 @@
-# Standard SQL in big query example
+# Course Notes
+## advanced functions
+### subquery
 ```sql
 SELECT
   airline,
@@ -28,6 +30,24 @@ GROUP BY f.airline
 ORDER BY
   frac_delayed ASC
 ```
+### with clause
+```
+WITH TitlesAndScores AS (
+  SELECT 
+    ... AS ...
+    ... AS ...
+  FROM ...
+  WHERE ...
+  GROUP BY ...
+)
+```
+### array, and select as struct
+```
+SELECT ..., 
+  ARRAY(SELECT AS STRUCT ..., ...
+        FROM UNNEST(...) ORDER BY ... DESC
+```
+
 
 ## use bq command to create big query table
 ```
@@ -49,4 +69,5 @@ bq ls $DEVSHELL_PROJECT_ID:cpb101_flight_data
 ```
 bq extract cpb101_flight_data.AIRPORTS gs://<your-bucket-name>/bq/airports2.csv
 ```
+
 ## Standard and legacy SQL comparison
