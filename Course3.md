@@ -29,4 +29,21 @@ ORDER BY
   frac_delayed ASC
 ```
 
+## use bq command to create big query table
+```
+bq load --source_format=NEWLINE_DELIMITED_JSON $DEVSHELL_PROJECT_ID:cpb101_flight_data.flights_2014 gs://cloud-training/CPB200/BQ/lab4/domestic_2014_flights_*.json ./schema_flight_performance.json
+```
+### schema
+./schema_flight_performance.json
+### data file
+gs://cloud-training/CPB200/BQ/lab4/domestic_2014_flights_*.json
+### check current project id
+```
+echo $DEVSHELL_PROJECT_ID
+```
+check current table in some project
+```
+bq ls $DEVSHELL_PROJECT_ID:cpb101_flight_data
+```
+
 ## Standard and legacy SQL comparison
