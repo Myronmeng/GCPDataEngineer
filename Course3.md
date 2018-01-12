@@ -72,6 +72,11 @@ SELECT
 FROM
   ...
 ```
+### sql user defined function
+```sql
+CREATE TEMPORARY FUNCTION
+addFourAndDivive(x INT64, y INT64) AS ((x + 4) / y);
+```
 ### extract
 ```sql
 EXTRACT(DATA FROM times_ts) AS date
