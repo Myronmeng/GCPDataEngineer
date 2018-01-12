@@ -45,5 +45,8 @@ check current table in some project
 ```
 bq ls $DEVSHELL_PROJECT_ID:cpb101_flight_data
 ```
-
+## use cli to export the table
+```
+bq extract cpb101_flight_data.AIRPORTS gs://<your-bucket-name>/bq/airports2.csv
+```
 ## Standard and legacy SQL comparison
