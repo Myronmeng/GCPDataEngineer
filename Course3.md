@@ -31,7 +31,7 @@ ORDER BY
   frac_delayed ASC
 ```
 ### with clause
-```
+```sql
 WITH TitlesAndScores AS (
   SELECT 
     ... AS ...
@@ -42,7 +42,7 @@ WITH TitlesAndScores AS (
 )
 ```
 ### array, and select as struct
-```
+```sql
 SELECT ..., 
   ARRAY(SELECT AS STRUCT ..., ...
         FROM UNNEST(...) ORDER BY ... DESC
