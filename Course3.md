@@ -61,6 +61,17 @@ LIMIT 2)
   AS top_articles
 FROM TitlesAndScores;
 ```
+### window function example
+```sql
+SELECT 
+  xxx,
+  yyy,
+  RAND() OVER (
+    PARTITION BY zzz
+    ORDER BY ggg DESC) hhh,
+FROM
+  ...
+```
 ### extract
 ```sql
 EXTRACT(DATA FROM times_ts) AS date
