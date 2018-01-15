@@ -38,3 +38,5 @@ mvn compile -e exec:java \
     --tempLocation=gs://$BUCKET/staging/ \
     --runner=DataflowRunner"
 ```
+## lab: create dataflow pipeline, run it locally and on cloud
+https://codelabs.developers.google.com/codelabs/cpb101-simple-dataflow/#0
