@@ -22,15 +22,15 @@ PCollection<TableRow> lines = p.apply(BigQueryIO.Read.fromQuery("javaQuery"));
 ```
 ### run dataflow 
 #### locally
-```
+```command
 java -classpath ... com...
 ```
 Or:
-```
+```command
 mvn compile -e exec:java -Dexec.mainClass=$MAIN
 ```
 #### on cloud
-```
+```command
 mvn compile -e exec:java \
   -Dexec.mainClass=$Main \
   -Dexec.args="--project=$PROJECT \
