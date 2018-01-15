@@ -117,6 +117,6 @@ use `APPROX_COUNT_DISTINCT` instead of `COUNT(DISTINCT)` if possible
 `ORDER` on the outermost query
 ### wildcard
 `.gsod200*` versus `.*`
-
+## Use stackdriver to project-level monitor the resources
 
 ## Standard and legacy SQL comparison
