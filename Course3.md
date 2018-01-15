@@ -103,4 +103,15 @@ bq ls $DEVSHELL_PROJECT_ID:cpb101_flight_data
 bq extract cpb101_flight_data.AIRPORTS gs://<your-bucket-name>/bq/airports2.csv
 ```
 
+## Performance of query
+### I/O how many bytes did you read?
+Don't `SELECT *` unless you need every field, select only the field
+### Shuffle, reduce the bytes you pass to the next stage
+Filter early and often using `WHERE`
+Do the biggest joins first
+Low cardinality `GROUP BY`
+### Materialization, how many bytes did you write
+### CPU, UDFs, functions
+built-in functions > function by SQL > function by javascript
+
 ## Standard and legacy SQL comparison
