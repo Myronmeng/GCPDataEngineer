@@ -113,5 +113,10 @@ Low cardinality `GROUP BY`
 ### Materialization, how many bytes did you write
 ### CPU, UDFs, functions
 built-in functions > function by SQL > function by javascript
+use `APPROX_COUNT_DISTINCT` instead of `COUNT(DISTINCT)` if possible
+`ORDER` on the outermost query
+### wildcard
+`.gsod200*` versus `.*`
+
 
 ## Standard and legacy SQL comparison
