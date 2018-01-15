@@ -20,3 +20,21 @@ PCollection<TableRow> lines = p.apply(BigQueryIO.Read.fromQuery("javaQuery"));
 ```java
 .apply(TextIO.Write.to("/data/output").withSuffix(".csv").withoutSharding())
 ```
+### run dataflow 
+#### locally
+```
+java -classpath ... com...
+```
+Or:
+```
+mvn compile -e exec:java -Dexec.mainClass=$MAIN
+```
+#### on cloud
+```
+mvn compile -e exec:java \
+  -Dexec.mainClass=$Main \
+  -Dexec.args="--project=$PROJECT \
+    --staginglocation=gs://$BUCKET/staging/ \
+    --tempLocation=gs://$BUCKET/staging/ \
+    --runner=DataflowRunner"
+```
