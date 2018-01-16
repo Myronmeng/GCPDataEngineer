@@ -92,3 +92,16 @@ javaContent //
 
 ### lab for side input
 https://codelabs.developers.google.com/codelabs/cpb101-bigquery-dataflow-sideinputs/#0
+
+
+## streaming data
+instead of read from a file or a PCollection, read from Pubsub, like:
+```java
+PCollection<String> lines = p.apply(PubsubIO.read().topic("input_topic"));
+```
+for output:
+```java
+c.outputWithTimestamp(f,Instant.parse(fields[2]));
+```
+
+
