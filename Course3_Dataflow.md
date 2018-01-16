@@ -38,7 +38,7 @@ mvn compile -e exec:java \
     --tempLocation=gs://$BUCKET/staging/ \
     --runner=DataflowRunner"
 ```
-## lab: create dataflow pipeline, run it locally and on cloud
+### lab: create dataflow pipeline, run it locally and on cloud
 https://codelabs.developers.google.com/codelabs/cpb101-simple-dataflow/#0
 
 ## Map and reduce function in dataflow
@@ -64,6 +64,31 @@ PCollection <KV<String,Integer>> cityAndZipcodes =
 PCollection<KV<String,Iterable<Integer>>> grouped = cityAndZipcodes.apply(GroupByKey.<String,Integer>create());
 ```
 
-## lab: more example about dataflow, including sum and find top
+### lab: more example about dataflow, including sum and find top
 like `KV.of(p, 1)`,`Top.of(5, new KV.OrderByValue<>())`
 https://codelabs.developers.google.com/codelabs/cpb101-mapreduce-dataflow/#0
+
+## side input
+```java
+PCollectionView<Map<String, Integer>> packagesThatNeedHelp = javaContent
+                .apply("NeedsHelp", ParDo.of(new DoFn<String[], KV<String, Integer>>() {...}
+//input channel 1
+javaContent //
+                .apply("IsPopular", ParDo.of(new DoFn<String[], KV<String, Integer>>() {...}
+                .apply(...)
+                .apply("CompositeScore", ParDo //
+                        .of(new DoFn<KV<String, Integer>, KV<String, Double>>() {
+
+                            @ProcessElement
+                            public void processElement(ProcessContext c) throws Exception {
+                                String packageName = c.element().getKey();
+                                int numTimesUsed = c.element().getValue();
+                                Integer numHelpNeeded = c.sideInput(packagesThatNeedHelp).get(packageName);
+                                ...
+                            }
+                         }
+//input channel 2. Here, create a channel 2. After that, take the PCollection from channel 1, packagesThatNeedHelp, into channel 2.
+```
+
+### lab for side input
+https://codelabs.developers.google.com/codelabs/cpb101-bigquery-dataflow-sideinputs/#0
