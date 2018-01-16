@@ -40,3 +40,28 @@ mvn compile -e exec:java \
 ```
 ## lab: create dataflow pipeline, run it locally and on cloud
 https://codelabs.developers.google.com/codelabs/cpb101-simple-dataflow/#0
+
+## Map and reduce function in dataflow
+java: use `ParDo` like:
+```java
+lines.apply("Length",Pardo.of(new DoFn<String, Integer>() {
+  @ProcessElement
+  public void processElement(ProcessContext c) throws Exception {
+    String line = c.element();//get the content in c
+    c.output(line.length());
+}}))
+   
+```
+### key-value pair
+```java
+PCollection <KV<String,Integer>> cityAndZipcodes = 
+  p.apply(Pardo.of(new DoFn<String, KV<String,Integer>>(){
+    @ProcessElement
+    public void processElement(ProcessContext c) throws Exception {
+      String[] fields = c.element().split();
+      c.output(KV.of(fields[0],Integer.parseInt(fields[3])));
+}}}))
+PCollection<KV<String,Iterable<Integer>>> grouped = cityAndZipcodes.apply(GroupByKey.<String,Integer>create());
+```
+
+
