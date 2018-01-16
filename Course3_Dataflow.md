@@ -1,5 +1,6 @@
 # Dataflow notes
 Dataflow execute Apache Beam pipeline
+PCollection: a class in dataflow which supports parallel processing.
 ### read/write from/to
 ####  from storage bucket, return String
 ```java
