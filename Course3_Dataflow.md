@@ -103,5 +103,16 @@ for output:
 ```java
 c.outputWithTimestamp(f,Instant.parse(fields[2]));
 ```
+window:
+```java
+.apply("window",Window.into(SlidingWindows//
+        .of(Duration.standardMinutes(2))//
+        .every(Duration.standardSeconds(30)))) //
+```
+if window is used, the processing would apply to the window.
+### lab, use pubsub in dataflow
+https://codelabs.developers.google.com/codelabs/cpb101-bigquery-dataflow-streaming/#0
+
+
 
 
