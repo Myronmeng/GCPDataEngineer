@@ -64,4 +64,6 @@ PCollection <KV<String,Integer>> cityAndZipcodes =
 PCollection<KV<String,Iterable<Integer>>> grouped = cityAndZipcodes.apply(GroupByKey.<String,Integer>create());
 ```
 
-
+## lab: more example about dataflow, including sum and find top
+like `KV.of(p, 1)`,`Top.of(5, new KV.OrderByValue<>())`
+https://codelabs.developers.google.com/codelabs/cpb101-mapreduce-dataflow/#0
