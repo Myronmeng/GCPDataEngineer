@@ -98,4 +98,5 @@ gcloud ml-engine local train \
    -- \
    --train_data_paths etc.
    REST as before
+   # REST as before means the rest argument leaves the same as before
 ```
