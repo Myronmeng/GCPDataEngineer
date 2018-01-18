@@ -69,6 +69,7 @@ python -m trainer.task \
 
 #### use ml engine in cloud
 submit the model into cloud use `gcloud ml-engine jobs submit training ...`
+
 example: training-data-analyst/courses/machine_learning/cloudmle/cloudmle.ipynb
 
 ```command
@@ -85,4 +86,16 @@ gcloud ml-engine jobs submit training $JOBNAME \
    --eval_data_paths="gs://${BUCKET}/taxifare/smallinput/taxi-valid*"  \
    --output_dir=$OUTDIR \
    --num_epochs=100
+   REST as before
+```
+
+run the model locally to have a test
+
+```command
+gcloud ml-engine local train \
+   --module-name=trainer.task \
+   --package-path=somedir/taxifare/trainer \
+   -- \
+   --train_data_paths etc.
+   REST as before
 ```
