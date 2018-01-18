@@ -15,6 +15,15 @@ fare_amount, total_amount FROM [nyc-tlc:yellow.trips] LIMIT 10
 trips = bq.Query(afewrecords).to_dataframe()
 trips
 ```
+#### run python model locally 
+```command
+python -m trainer.task \
+   --train_data_paths="${REPO}/courses/machine_learning/datasets/taxi-train*" \
+   --eval_data_paths=${REPO}/courses/machine_learning/datasets/taxi-valid.csv  \
+   --output_dir=${REPO}/courses/machine_learning/cloudmle/taxi_trained \
+   --num_epochs=10 --job-dir=./tmp
+```
+
 #### use ml engine in datalab
 example: training-data-analyst/courses/machine_learning/cloudmle/cloudmle.ipynb
 
