@@ -59,6 +59,7 @@ parser.add_argument('--train_data_paths',required=True)
 
 #### run python model locally 
 ```command
+export PYTHONPATH=${PYTHONPATH}:/somedir/taxifare
 python -m trainer.task \
    --train_data_paths="${REPO}/courses/machine_learning/datasets/taxi-train*" \
    --eval_data_paths=${REPO}/courses/machine_learning/datasets/taxi-valid.csv  \
