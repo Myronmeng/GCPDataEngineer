@@ -67,7 +67,8 @@ python -m trainer.task \
    --num_epochs=10 --job-dir=./tmp
 ```
 
-#### use ml engine in datalab
+#### use ml engine in cloud
+submit the model into cloud use `gcloud ml-engine jobs submit training ...`
 example: training-data-analyst/courses/machine_learning/cloudmle/cloudmle.ipynb
 
 ```command
