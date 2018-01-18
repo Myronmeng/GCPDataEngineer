@@ -28,7 +28,17 @@ https://codelabs.developers.google.com/codelabs/dataeng-machine-learning/index.h
 input_file_names = tf.train.match_filenames_once(filename)
 filename_queue = tf.train.string_input_producer(
   input_file_names,num_epochs=num_epochs,shuffle=True)
-  
+```
+### read file, and fill in default values
+```python
+CSV_COLUMNS = ['fare_amount','key']
+DEFAULTS = [[0.0],['nokey']]
+...
+columns = tf.decode_csv(value_column,record_defaults=DEFAULTS)
+```
+### change log level from WARN to INFO
+```python
+tf.logging.set_verbosity(tf.logging.INFO)
 ```
 #### use big query in datalab
 here directly select the data from big query. use `%sql --module <QUERYNAME>` to define sql query, and use `bq.Query(<QUERYNAME>?.to_datafrome()` to convert to dataframe.
