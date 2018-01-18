@@ -50,6 +50,13 @@ fare_amount, total_amount FROM [nyc-tlc:yellow.trips] LIMIT 10
 trips = bq.Query(afewrecords).to_dataframe()
 trips
 ```
+#### prepare ml engine
+```python
+# define task.py
+parser.add_argument('--train_data_paths',required=True)
+# define model.py. model.py is the code we wrote in training which to process the data.
+```
+
 #### run python model locally 
 ```command
 python -m trainer.task \
