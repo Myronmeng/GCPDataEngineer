@@ -18,3 +18,18 @@ trips
 #### use ml engine in datalab
 example: training-data-analyst/courses/machine_learning/cloudmle/cloudmle.ipynb
 
+```command
+gcloud ml-engine jobs submit training $JOBNAME \
+   --region=$REGION \
+   --module-name=trainer.task \
+   --package-path=${REPO}/courses/machine_learning/cloudmle/taxifare/trainer \
+   --job-dir=$OUTDIR \
+   --staging-bucket=gs://$BUCKET \
+   --scale-tier=BASIC \
+   --runtime-version=1.0 \
+   -- \
+   --train_data_paths="gs://${BUCKET}/taxifare/smallinput/taxi-train*" \
+   --eval_data_paths="gs://${BUCKET}/taxifare/smallinput/taxi-valid*"  \
+   --output_dir=$OUTDIR \
+   --num_epochs=100
+```
