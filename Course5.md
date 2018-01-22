@@ -1,15 +1,17 @@
 # PubSub
 ## create and publish in PubSub
-### Command line
-#### create topic
+
+### create topic
+#### Command line
+create a topic
 ```command
 gcloud beta pubsub topics create sandiego
 ```
-#### publish a message to this topic
+publish a message to this topic
 ```command
 gcloud beta pubsub topics publish sandiego "hello"
 ```
-### In python:
+#### In python:
 ```python
 from google.cloud import pubsub
 client = pubsub.Client()
@@ -17,7 +19,7 @@ topic = client.topic("sandiego")
 topic.create()
 topic.publish(b'hello')
 ```
-#### publish options:
+publish options:
 ```python
 TOPIC = 'sandiego'
 topic.publis(b'This is the message payload')
@@ -28,5 +30,44 @@ with topic.batch() as batch:
   batch.publish(PAYLOAD1)
   batch.publish(PAYLOAD2,extra=EXTRA)
 ```
+### create a subscription
+#### Command line
+```command
+gcloud beta pubsub subscriptions create --topic sandiego mySub1
+gcloud beta pubsub subscriptions pull --auto-ack mySub1 # for pull type of subscription
+```
+#### python
+```python
+subscription = topic.subscription(subscription_name)
+subscription.create()
+results = subscription.pull(return_immediately=True)
+if results:
+  subscription.acknowledge([ack_id for ack_id, message in results])
+```
+### create topic and susbcription lab:
+https://codelabs.developers.google.com/codelabs/cpb104-pubsub/#0
+```command
+gcloud components install beta
+gcloud beta pubsub topics create sandiego
+gcloud beta pubsub topics publish sandiego "hello"
+gcloud beta pubsub subscriptions create --topic sandiego mySub1
+gcloud beta pubsub subscriptions pull --auto-ack mySub1
+```
+here, no message was pulled. The reason for that is maybe due to the message was published before the creation of the subscription. we can test by do a pulling again, after a new message published
+```command
+gcloud beta pubsub topics publish sandiego "hello again"
+gcloud beta pubsub subscriptions pull --auto-ack mySub1
+```
+response:
+```command
+┌─────────────┬────────────────┬────────────┐
+│     DATA    │   MESSAGE_ID   │ ATTRIBUTES │
+├─────────────┼────────────────┼────────────┤
+│ hello again │ 25889974173992 │            │
+└─────────────┴────────────────┴────────────┘
+```
+delete the subscription
+```command
 
-
+gcloud beta pubsub subscriptions delete mySub1
+```
