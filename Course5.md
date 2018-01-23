@@ -74,3 +74,19 @@ delete the topic
 ```command
 gcloud beta pubsub topic delete sandiego
 ```
+## batch and streaming processing using DataFlow
+### Scenario 1: publisher may publish the same message several times
+Solution: add an ID to it. For example:
+```java
+msg.publish(event_data,myid="b93nrsof3913")
+```
+or
+```java
+p.apply(PubsubIO.Write(outputTopic).idLabel("myid"))
+  .apply(...)
+```
+when reading, tell DataFlow which attribute is the idLabel
+```
+p.apply(PubsubIO.readString().fromTopic(t).idLabel("myid"))
+  .apply(...)
+```
