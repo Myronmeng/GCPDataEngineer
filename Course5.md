@@ -106,3 +106,5 @@ PCollection<KV<String,Double>> avgSpeed = currentConditions
   }))
   .apply("AvgBySensor",Mean.perKey());
 ```
+### watermark and trigger
+
