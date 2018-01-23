@@ -68,6 +68,9 @@ response:
 ```
 delete the subscription
 ```command
-
 gcloud beta pubsub subscriptions delete mySub1
+```
+delete the topic
+```command
+gcloud beta pubsub topic delete sandiego
 ```
