@@ -75,7 +75,7 @@ delete the topic
 gcloud beta pubsub topic delete sandiego
 ```
 ## batch and streaming processing using DataFlow
-### Scenario 1: publisher may publish the same message several times
+### Scenario: publisher may publish the same message several times
 Solution: add an ID to it. For example:
 ```java
 msg.publish(event_data,myid="b93nrsof3913")
@@ -89,4 +89,20 @@ when reading, tell DataFlow which attribute is the idLabel
 ```
 p.apply(PubsubIO.readString().fromTopic(t).idLabel("myid"))
   .apply(...)
+```
+### windows. refer to note in Course3.md.
+```java
+PCollection<KV<String,Double>> avgSpeed = currentConditions 
+  .apply("TimeWindow",
+    Window.into(SlidingWindows//
+      .of(Duration.standardSecond(60))))
+  .apply("BySensor", ParDo.of(new DoFn() {
+    ...
+    LaneInfo info = c.element();
+    String key = info.getSensorKey();
+    Double speed = info.getSpeed();
+    c.output(KV.of(key,speed));
+    ...
+  }))
+  .apply("AvgBySensor",Mean.perKey());
 ```
