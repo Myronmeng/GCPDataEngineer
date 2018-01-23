@@ -80,7 +80,7 @@ Solution: add an ID to it. For example:
 ```java
 msg.publish(event_data,myid="b93nrsof3913")
 ```
-or
+and
 ```java
 p.apply(PubsubIO.Write(outputTopic).idLabel("myid"))
   .apply(...)
@@ -106,5 +106,35 @@ PCollection<KV<String,Double>> avgSpeed = currentConditions
   }))
   .apply("AvgBySensor",Mean.perKey());
 ```
-### watermark and trigger
-
+### watermark and trigger, processing scenarios
+this video explained it well
+https://www.coursera.org/learn/building-resilient-streaming-systems-gcp/lecture/sl5OE/how-dataflow-handles-streaming-data-while-balancing-tradeoffs
+#### classic batch,no triggers
+```java
+PCollection<KV<String, Integer>> scores = input
+  .apply(Sum.integersPerKey());
+```
+#### batch with fixed windows
+```java
+PCollection<KV<String, Integer>> scores = input
+  .apply(Window.into(FixedWindows.of(Minutes(2)))
+  .apply(Sum.integersPerKey());
+```
+#### triggering at watermark
+```java
+PCollection<KV<String, Integer>> scores = input
+  .apply(Window.into(FixedWindows.of(Minutes(2)))
+    .triggering(AtWatermark()))
+  .apply(Sum.integersPerKey());
+```
+in this case, the late data was throw out.
+Trigger can be set as, like, 1 min after the watermark.
+#### customized timestamp
+```java
+batch.publish(event_data,mytime="2017-04-12T23:22:22.55Z")
+```
+and in dataflow,
+```java
+p.apply(PubsubIO.readStrings().fromTopic(t).withTimestampAttribute("mytime"))
+  .apply(...)
+```
