@@ -52,3 +52,14 @@ FROM
   `bigquery-public-data.samples.shakespeare`
 LIMIT 1;
 ```
+### Trailing commas in the SELECT list
+Unlike legacy SQL, standard SQL does not permit trailing commas prior to the FROM clause. For example, the following query is invalid:
+```sql
+#standardSQL
+SELECT
+  word,
+  corpus,  -- Error due to trailing comma
+FROM
+  `bigquery-public-data.samples.shakespeare`
+LIMIT 1;
+```
