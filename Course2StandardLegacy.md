@@ -37,3 +37,18 @@ rows as a reserved keywords. In legacy sql it is ok but in standard, it needs to
 SELECT
   COUNT(*) AS `rows`
 ```
+### Project-qualified table names
+```sql
+#legacySQL
+SELECT
+  word
+FROM
+  [bigquery-public-data:samples.shakespeare]
+LIMIT 1;
+#standardSQL
+SELECT
+  word
+FROM
+  `bigquery-public-data.samples.shakespeare`
+LIMIT 1;
+```
