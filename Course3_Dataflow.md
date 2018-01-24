@@ -123,5 +123,7 @@ if window is used, the processing would apply to the window.
 https://codelabs.developers.google.com/codelabs/cpb101-bigquery-dataflow-streaming/#0
 
 
+## Choose where to store
+https://www.coursera.org/learn/building-resilient-streaming-systems-gcp/lecture/4bI7l/choosing-where-to-store-data-on-gcp
 
 
