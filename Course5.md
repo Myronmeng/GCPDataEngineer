@@ -138,3 +138,15 @@ and in dataflow,
 p.apply(PubsubIO.readStrings().fromTopic(t).withTimestampAttribute("mytime"))
   .apply(...)
 ```
+#### lab: Streaming Data Pipelines SKEPPED
+https://codelabs.developers.google.com/codelabs/cpb104-dataflow-streaming-pipeline/
+and:
+https://codelabs.developers.google.com/codelabs/cpb104-bigquery-datastudio/
+
+
+To enable credentials and auth
+```command
+gcloud auth application default login
+```
+
+
