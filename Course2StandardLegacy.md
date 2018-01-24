@@ -32,4 +32,8 @@ SELECT
 FROM
   `bigquery-public-data.samples.shakespeare`;
 ```
-rows as a reserved keywords. In legacy sql it is ok but in standard, it needs to be replaced by ``rows``.
+rows as a reserved keywords. In legacy sql it is ok but in standard, it needs to be replaced by:
+```sql
+SELECT
+  COUNT(*) AS `rows`
+```
