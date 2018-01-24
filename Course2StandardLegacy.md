@@ -13,17 +13,29 @@ refer: https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-f
 Legacy SQL types have an equivalent in standard SQL and vice versa. In some cases, the type has a different name. The following table lists each legacy SQL data type and its standard SQL equivalent.
 
 Legacy SQL	Standard SQL	Notes
+
 BOOL	      BOOL	
+
 INTEGER	    INT64	
+
 FLOAT	      FLOAT64	
+
 STRING	    STRING	
+
 BYTES	      BYTES	
+
 RECORD	    STRUCT	
+
 REPEATED	  ARRAY	
+
 TIMESTAMP	  TIMESTAMP	    See TIMESTAMP differences
+
 DATE	      DATE	        Legacy SQL has limited support for DATE
+
 TIME	      TIME	        Legacy SQL has limited support for TIME
+
 DATETIME	  DATETIME	    Legacy SQL has limited support for DATETIME
+
 ### Legacy SQL allows reserved keywords in some places that standard SQL does not. For example, the following query fails due to a Syntax error using standard SQL:
 ```sql
 #standardSQL
