@@ -8,7 +8,7 @@
 |AppEngine|PaaS|
 |ComputeEngine|IaaS|
 |Container Engine|between. host containers|
-
+-----------------------
 | When you need        | use          |
 | ------------- |:-------------:|
 | Storgae for compute, block storage     | Persistent HDD,SSD | 
@@ -18,3 +18,6 @@
 |Fast scanning, nosql|BigTable|
 |Transaction processing(OLTP)|Cloud SQL, cloud spanner|
 |Analytics/data warehouse(OLAP)|bigquery|
+details:
+
+https://www.udemy.com/gcp-data-engineer-and-cloud-architect/learn/v4/t/lecture/7589608?start=0
