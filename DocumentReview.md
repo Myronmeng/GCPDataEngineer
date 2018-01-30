@@ -1,16 +1,17 @@
 # Choose Storage
-Cloud Storage for FIrebase
+## Structured, analytics, relational and low latency
+Cloud Storage for FIrebase: unstructured. Strucured, no analytics, mobile. 
 
-Cloud Spanner
+Cloud Spanner: Structured, relational, no analytics
 
-Cloud Storage
+Cloud Storage: unstructured
 
-Cloud SQL
+Cloud SQL: structured, no analytics , relational
 
-Cloud Datastore
+Cloud Datastore: structured, no analytics, no relational
 
-Cloud Bigtable
+Cloud Bigtable: structured, analytics, relational
 
-BigQuery
+BigQuery: structured, analytics, relational
 
 ![alt text](https://cloud.google.com/images/storage-options/flowchart.svg "Logo Title Text 1")
