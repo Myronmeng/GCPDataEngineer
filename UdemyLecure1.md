@@ -30,4 +30,6 @@ Hive sopports HiveQL, like SQL. HiveQL is then translated to map-reduce jobs.
 ### Pig
 Scripting language.
 Pig enables data worders to write complex data transformations without knowing Java. Pig's simple SQL-like scripting language is called Pig Latin.
-
+### Oozie and Sqoop
+Oozie is a worflow scheduler system to manage apache hadoop jobs
+Sqoop transfers large amounts of data into hdfs from relational databases such as mySql.
