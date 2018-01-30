@@ -21,3 +21,13 @@
 details:
 
 https://www.udemy.com/gcp-data-engineer-and-cloud-architect/learn/v4/t/lecture/7589608?start=0
+
+
+## Lee's Course
+Hadoop eco system:
+### Hive
+Hive sopports HiveQL, like SQL. HiveQL is then translated to map-reduce jobs.
+### Pig
+Scripting language.
+Pig enables data worders to write complex data transformations without knowing Java. Pig's simple SQL-like scripting language is called Pig Latin.
+
