@@ -149,4 +149,7 @@ To enable credentials and auth
 gcloud auth application default login
 ```
 
+# Tipical architecture for data analytics
+https://www.coursera.org/learn/building-resilient-streaming-systems-gcp/lecture/YUGGw/summary-of-data-engineering-on-gcp-specialization
+0:31
 
