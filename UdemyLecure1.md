@@ -33,3 +33,11 @@ Pig enables data worders to write complex data transformations without knowing J
 ### Oozie and Sqoop
 Oozie is a worflow scheduler system to manage apache hadoop jobs
 Sqoop transfers large amounts of data into hdfs from relational databases such as mySql.
+
+## Case study
+1. It's okay to just look at the technical requirements section and solution concept
+2. When it says hadoop workload immediately think of data proc
+3. When it mentioned IOT data think of BigTable as it is perfect for IOT workloads
+4. Streaming and batched is for dataflow and bigquery
+5. When it says analyse historical data for predictive purposes alwasy think BigQuery
+6. When it mentions Apache Kafka always think Cloud Pub/Sub as they are both messaging systems.
