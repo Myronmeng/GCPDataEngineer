@@ -3,7 +3,7 @@
 | ------------- |:-------------:|
 | BigQuery      | Hive | 
 |Dataflow|Spark|
-|PubSub|Flim, sparkStreaming|
+|PubSub|Flim, sparkStreaming kafka|
 |BigTable|HBase|
 |AppEngine|PaaS|
 |ComputeEngine|IaaS|
