@@ -6,14 +6,14 @@
 view link to data studio 360, and expose studio 360 to user
 4. bigquery's efficiency
 5. about view
-|first| last|
+`|first| last|`
 can i add one more column, let it become:
-|first|last| fullname|
+`|first|last| fullname|`
 ## BigTable
 how to design the row key?
 global warehouse, racks --> temperature sensor
 create a big table to monitor in real time
-should it be /sensor-id/ /date/
+should it be `sensor-id-date`
 ## ML
 ### house price predict
 what if the computer is not powerful?
@@ -29,3 +29,14 @@ B. use convolutional NN to pre-process the image, adjacent pixel
 C. dimension deminish, compare transparent-white pixels
 D. use more detailed gray-scaled image, make high-resolution
 peter chose c and d
+### anormaly and normal cells
+compare simularity between anormally and normal cells
+### transaction data in a bank
+data has 4 features:
+`id`, `timestamp`, `location`, `amount`
+what ML can we do on this set of data?
+supervised fraud, unsupervised cluster
+### moon dataset
+image provided. 
+in which way i can do a classification?
+gaussian? NN?
