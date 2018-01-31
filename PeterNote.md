@@ -1,6 +1,7 @@
 # Peter's note
 Mostly, the exam is focused on bigQuery and bigTable
 bigQuery 40%
+IAM 30%
 ## Case study
 1. case study: 4 problems each case in the end, from Prob. 42 to the end.
 migrate to use what method?
@@ -32,7 +33,7 @@ create a big table to monitor in real time
 should it be `sensor-id-date`
 ### dimentional data modeling
 most commonly used case is a must read. creating a row key is based on it.
-## ML
+## ML, 6-7 Problems
 ### house price predict
 what if the computer is not powerful?
 A. Linear regression
@@ -65,6 +66,7 @@ A. firebase and cloud storage
 if BE Is down, how to allow customers use the resources in website?
 A. script to dynamically modify the storage 
 ## IAM
+access and share of following:
 1. view level
 2. table level
 3. tableset level
