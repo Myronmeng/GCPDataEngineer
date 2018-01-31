@@ -25,6 +25,9 @@ B. column family:column name in [customer location related set]
 which one works well?
 5. syntax
 Array and Struct
+6. table clause
+`table-name*`
+
 ## BigTable
 ### Row key design
 how to design the row key?
@@ -79,5 +82,5 @@ access and share of following:
 3. tableset level
 4. project level
 share/access to bigquery table
-## data studio 360
+## Data studio 360
 save cost, create model.
