@@ -1,7 +1,12 @@
 # Peter's note
 Mostly, the exam is focused on bigQuery and bigTable
+bigQuery 40%
 ## Case study
 1. case study: 4 problems each case in the end, from Prob. 42 to the end.
+migrate to use what method?
+pub/sub -> dataflow -> bigQuery
+2 lvl query, how can we do it?
+peter chose using data studio 360
 2. The boundary in the problem windows can be adjusted.
 ## BigQuery
 1. how to reduce big query fee?
@@ -17,12 +22,16 @@ A. column family:column name = [customer id range]
 B. column family:column name in [customer location related set]
 
 which one works well?
+5. syntax
+Array and Struct
 ## BigTable
 ### Row key design
 how to design the row key?
 global warehouse, racks --> temperature sensor
 create a big table to monitor in real time
 should it be `sensor-id-date`
+### dimentional data modeling
+most commonly used case is a must read. creating a row key is based on it.
 ## ML
 ### house price predict
 what if the computer is not powerful?
@@ -55,3 +64,11 @@ Sunday and workday volumn are different. how to store the data?
 A. firebase and cloud storage
 if BE Is down, how to allow customers use the resources in website?
 A. script to dynamically modify the storage 
+## IAM
+1. view level
+2. table level
+3. tableset level
+4. project level
+share/access to bigquery table
+## data studio 360
+save cost, create model.
