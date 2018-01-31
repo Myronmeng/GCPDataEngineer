@@ -61,6 +61,8 @@ in which way i can do a classification?
 gaussian? NN?
 ### precision and recall
 small dataset, which index can describe how accurate the ml algo is?
+### recurrent NN
+fasion designer to design, which to use? use historically data? with combination of current data?
 ## data store
 website, how to store static context and dynamic context
 Sunday and workday volumn are different. how to store the data?
