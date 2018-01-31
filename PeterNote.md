@@ -6,9 +6,8 @@
 view link to data studio 360, and expose studio 360 to user
 4. bigquery's efficiency
 5. about view
-----------
 |first| last|
-----------
+| ------------- |:-------------:|
 can i add one more column, let it become:
 |first|last| fullname|
 ## BigTable
@@ -16,3 +15,9 @@ how to design the row key?
 global warehouse, racks --> temperature sensor
 create a big table to monitor in real time
 should it be <sensor-id> <date>
+## ML
+house price predict
+what if the computer is not powerful?
+  Linear regression
+  1 input 1 output neural network
+  
