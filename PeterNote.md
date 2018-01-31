@@ -1,15 +1,26 @@
+# Peter's note
+Mostly, the exam is focused on bigQuery and bigTable
 ## Case study
 1. case study: 4 problems each case in the end, from Prob. 42 to the end.
 2. The boundary in the problem windows can be adjusted.
 ## BigQuery
-3. how to reduce big query fee?
+1. how to reduce big query fee?
 view link to data studio 360, and expose studio 360 to user
-4. bigquery's efficiency
-5. about view
+2. bigquery's efficiency
+3. about view
 `|first| last|`
 can i add one more column, let it become:
 `|first|last| fullname|`
+4. view:
+where
+
+A. column family:column name = [customer id range]
+
+B. column family:column name in [customer location related set]
+
+which one works well?
 ## BigTable
+### Row key design
 how to design the row key?
 global warehouse, racks --> temperature sensor
 create a big table to monitor in real time
