@@ -13,9 +13,7 @@ can i add one more column, let it become:
 `|first|last| fullname|`
 4. view:
 where
-
 A. column family:column name = [customer id range]
-
 B. column family:column name in [customer location related set]
 
 which one works well?
@@ -51,3 +49,9 @@ supervised fraud, unsupervised cluster
 image provided. 
 in which way i can do a classification?
 gaussian? NN?
+## data store
+website, how to store static context and dynamic context
+Sunday and workday volumn are different. how to store the data?
+A. firebase and cloud storage
+if BE Is down, how to allow customers use the resources in website?
+A. script to dynamically modify the storage 
